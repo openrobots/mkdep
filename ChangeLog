@@ -12,19 +12,19 @@ mkdep 2.5 Released 19 december 2006
 
  14. Handle autoconf 2.60 datarootdir settings.
  13. Add pkg-config file and m4 template macro to look for mkdep executable
- 12. Ignore lignes tagged with <stdin> or <stdout> by GNU cpp. 
-     (Ludovic Courtes) 
+ 12. Ignore lignes tagged with <stdin> or <stdout> by GNU cpp.
+     (Ludovic Courtes)
 
 mkdep 2.4 Released 29 august 2005
 
  11. Fix packing list (compatibility sources where omitted).
  10. Update to autoconf 2.59.
-  9. /usr/lib/gcc/ contains system includes in some recent Linux distros. 
+  9. /usr/lib/gcc/ contains system includes in some recent Linux distros.
      Ignore its contents too when ignoring system includes.
 
 mkdep 2.3 Released 20 december 2004
 
-  8. Replace insecure string copy functions with strlcat/strlcpy. 
+  8. Replace insecure string copy functions with strlcat/strlcpy.
   7. Expand buffer space for file names to 1024 characters.
   6. force LC_ALL=C before calling cpp, to avoid problem with localized
      strings in cpp output parser.
@@ -32,13 +32,11 @@ mkdep 2.3 Released 20 december 2004
 
 mkdep 2.2 Released 25 july 2003
 
-  4. Add this CHANGELOG. 
-  3. Add license to files where it was missing. 
+  4. Add this CHANGELOG.
+  3. Add license to files where it was missing.
   2. Use mkdinstdir to create destination directories.
   1. Fix manual page installation.
 
 mkdep 2.1 Released 27 february 2002
 
-  Initial public release of LAAS mkdep. 
-
-$LAAS$
+  Initial public release of LAAS mkdep.
