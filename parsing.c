@@ -1,6 +1,6 @@
 /** This is a -*-c-*- file **/
 /*
- * Copyright (c) 1994-2004 LAAS/CNRS 
+ * Copyright (c) 1994-2004 LAAS/CNRS
  * Christophe Dousson - Thu Jun 16 1994
  *
  * Redistribution and use in source and binary forms, with or without
@@ -46,7 +46,7 @@ void define_preprocessor(const char * name)
 	preprocessor = NULL;
     }
     if (name != NULL) {
-        len = strlen(name)+4;
+	len = strlen(name)+4;
 	preprocessor = (char*) malloc(len);
 	snprintf(preprocessor, len, "%s -E", name);
     }
@@ -54,7 +54,7 @@ void define_preprocessor(const char * name)
 
 void add_preprocessor_arg(char opt, const char *arg)
 {
-    size_t len; 
+    size_t len;
 
     if (preprocessor == NULL) {
 	define_preprocessor(CC); /* CC = MACRO */
@@ -75,11 +75,11 @@ FILE * run_preprocessor(const char* file, const char *vpath)
 	define_preprocessor(CC); /* CC = MACRO */
     }
     if (vpath == NULL) {
-        len = strlen(preprocessor)+strlen(file)+20;
+	len = strlen(preprocessor)+strlen(file)+20;
 	command = (char*) malloc(len);
 	snprintf(command, len, "exec env LC_ALL=C %s %s", preprocessor, file);
     } else {
-        len = strlen(preprocessor)+strlen(vpath)+strlen(file)+21;
+	len = strlen(preprocessor)+strlen(vpath)+strlen(file)+21;
 	command = (char*) malloc(len);
 	snprintf(command, len, "exec env LC_ALL=C %s %s/%s", preprocessor, vpath, file);
     }
@@ -96,7 +96,7 @@ void parse_preprocessed_data(FILE * fin, const char * vpath)
 {
     char buffer[256];
     int len = 0;
-    int c = '\n'; 
+    int c = '\n';
     if (vpath != NULL) {
 	len = strlen(vpath);
     }
@@ -110,19 +110,19 @@ void parse_preprocessed_data(FILE * fin, const char * vpath)
 		/* on verifie que c'est bien un numero de ligne */
 		if (isdigit(c)) {
 		    /* on supprimme les chiffres puis les blancs */
-		    while (isdigit(c)) { 
-			c = getc(fin); 
-		    } 
+		    while (isdigit(c)) {
+			c = getc(fin);
+		    }
 		    if (c != ' ') {
 			/* il faut un blanc la` !
 			   s'il y a autre chose c'est dans le programme
 			   et des fois ca commence par "...." */
 			continue;
 		    }
-		    while (c == ' ') { 
-			c = getc(fin); 
-			
-		    } 
+		    while (c == ' ') {
+			c = getc(fin);
+
+		    }
 		    /* on doit avoir une double quote sinon c'est que
 		       c'est pas la ligne qu'on croyait */
 		    if (c == '"') {
@@ -136,11 +136,11 @@ void parse_preprocessed_data(FILE * fin, const char * vpath)
 			    buffer[pos-1] = 0;
 			    /* printf("buffer: %s\n", buffer); */
 			    if (strcmp(buffer, "<command line>") != 0 &&
-			        strcmp(buffer, "<command-line>") != 0 &&
+				strcmp(buffer, "<command-line>") != 0 &&
 				strcmp(buffer, "<built-in>") != 0 &&
 				strcmp(buffer, "<stdout>") != 0 &&
 				strcmp(buffer, "<stdin>") != 0)
-				    add_dependency(buffer, sizeof(buffer), 
+				    add_dependency(buffer, sizeof(buffer),
 					vpath, len);
 			} else {
 			    /* probleme mais quoi ??? */
@@ -153,4 +153,3 @@ void parse_preprocessed_data(FILE * fin, const char * vpath)
 	}
     } /* fin du while */
 }
-

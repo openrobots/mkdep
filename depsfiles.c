@@ -1,6 +1,6 @@
 /** This is a -*-c-*- file **/
 /*
- * Copyright (c) 1994-2004 LAAS/CNRS 
+ * Copyright (c) 1994-2004 LAAS/CNRS
  * Christophe Dousson - Thu Jun 16 1994
  *
  * Redistribution and use in source and binary forms, with or without
@@ -59,7 +59,7 @@ void display_dependencies(FILE * fout, int compact, const char* target)
     }
 }
 
-void add_dependency(char *name, size_t namelen, 
+void add_dependency(char *name, size_t namelen,
     const char * vpath, int vpathlength)
 {
     deps * current;
@@ -72,7 +72,7 @@ void add_dependency(char *name, size_t namelen,
     substitution_filtering(name, namelen);
 
     /* suppression du vpath (if any) */
-    if ((vpathlength > 0) && 
+    if ((vpathlength > 0) &&
 	(strncmp(name, vpath, vpathlength) == 0) &&
 	(name[vpathlength] == '/')) {
 	addeddeps = name+vpathlength+1;

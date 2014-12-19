@@ -1,6 +1,6 @@
 /** This is a -*-c-*- file **/
 /*
- * Copyright (c) 1994-2004 LAAS/CNRS 
+ * Copyright (c) 1994-2004 LAAS/CNRS
  * Christophe Dousson - Thu Jun 16 1994
  *
  * Redistribution and use in source and binary forms, with or without
@@ -68,12 +68,12 @@ int main(int argc, char** argv)
 	    }
 
 	    switch (argv[arg][1]) {
-		
+
 	      case 'a':
 		generate_system_dependencies();
 		argument = NULL; /* on ne l'utilise pas */
 		break;
-		
+
 	      case 'k':
 		compact = 1;
 		argument = NULL; /* on ne l'utilise pas */
@@ -82,16 +82,16 @@ int main(int argc, char** argv)
 	      case 'd':
 		directory = argument;
 		break;
-		
+
 	      case 'o':
 		close_output_file(fout);
 		fout = open_output_file(argument);
 		break;
-		
+
 	      case 'l':
 		library = argument;
 		break;
-		
+
 	      case 'i':
 		if (strncmp(argv[arg], "-isystem", 8) == 0 ||
 		    strncmp(argv[arg], "-idirafter", 10) == 0) {
@@ -134,7 +134,7 @@ int main(int argc, char** argv)
 		display_help_message();
 		exit(0);
 		break;
-				
+
 	      case 'I': /* options du preprocesseur */
 	      case 'D':
 	      case 'U':
@@ -143,7 +143,7 @@ int main(int argc, char** argv)
 		break;
 
 	      case 'n':
-	        if (strcmp(argv[arg], "-no-cpp-precomp") == 0) {
+		if (strcmp(argv[arg], "-no-cpp-precomp") == 0) {
 		  /* option de Darwin -> utilise le cpp GNU */
 		  add_preprocessor_arg(argv[arg][1], argument);
 		}

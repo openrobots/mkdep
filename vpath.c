@@ -1,6 +1,6 @@
 /** This is a -*-c-*- file **/
 /*
- * Copyright (c) 1994-2004 LAAS/CNRS 
+ * Copyright (c) 1994-2004 LAAS/CNRS
  * Christophe Dousson - Thu Jun 16 1994
  *
  * Redistribution and use in source and binary forms, with or without
@@ -86,7 +86,7 @@ const char* find_file(const char* name)
 {
     int i;
     char File[1024];
-    
+
     /* on teste le chemin courant */
     if (access(name, R_OK) == 0) {
 	return NULL;
@@ -99,7 +99,7 @@ const char* find_file(const char* name)
 	    if (access(File, R_OK) == 0) {
 		    return vpaths[i];
 	    }
-    }    
+    }
     fprintf (stderr, "mkdep: %s, file not found\n", name);
     exit(1);
     return NULL;

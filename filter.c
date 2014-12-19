@@ -1,6 +1,6 @@
 /** This is a -*-c-*- file **/
 /*
- * Copyright (c) 1994-2004 LAAS/CNRS 
+ * Copyright (c) 1994-2004 LAAS/CNRS
  * Christophe Dousson - Thu Jun 16 1994
  *
  * Redistribution and use in source and binary forms, with or without
@@ -75,7 +75,7 @@ void add_substitution(const char* subst)
 	    current->next = newsubst;
 	} else {
 	    if (strcmp(newsubst->name, current->next->name) != 0) {
-		fprintf(stderr, 
+		fprintf(stderr,
 			"mkdep: $(%s) and $(%s) define the same path \"%s\"\n",
 			newsubst->name, current->next->name, newsubst->subname);
 	    }
@@ -94,7 +94,7 @@ void substitution_filtering(char *name, size_t namelen)
     while (current != NULL) {
 	if (strncmp(current->subname, name, current->length) == 0) {
 	    char result[1024];
-	    snprintf(result, sizeof(result), "$(%s)%s", 
+	    snprintf(result, sizeof(result), "$(%s)%s",
 		     current->name, name+current->length);
 	    strlcpy(name, result, namelen);
 	}
@@ -136,24 +136,24 @@ int ignore_filtering(const char * name)
      * on recherche si la dependance est l'une du systeme
      * on une propre a l'utilisateur
      */
-    current = systemPaths;    
+    current = systemPaths;
     while (current != NULL) {
-        /* si c'est un include du system, on ne le prend pas */
-        if (CMP(current, name) == 0) return 1;
-        current = current->next;
+	/* si c'est un include du system, on ne le prend pas */
+	if (CMP(current, name) == 0) return 1;
+	current = current->next;
     }
     current = userPaths;
     while (current != NULL) {
-        /* si c'est un include ignore par l'utilisateur, on s'en va */
-        if (CMP(current, name) == 0) return 1;
-        current = current->next;
+	/* si c'est un include ignore par l'utilisateur, on s'en va */
+	if (CMP(current, name) == 0) return 1;
+	current = current->next;
     }
     return 0;
 }
 
 
 /*
- *   gestion des options -i et -a 
+ *   gestion des options -i et -a
  */
 
 void generate_system_dependencies(void)
@@ -164,7 +164,7 @@ void generate_system_dependencies(void)
 }
 
 void ignore_system_dependencies(void)
-{ 
+{
     if (systemPaths == NULL) {
 	int i;
 	int nbSysDeps = sizeof(sysDeps)/sizeof(char*);

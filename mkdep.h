@@ -1,6 +1,6 @@
 /*  This looks like c, but it's really -*-c-*-
- * 
- * Copyright (c) 1994-2004 LAAS/CNRS 
+ *
+ * Copyright (c) 1994-2004 LAAS/CNRS
  * Christophe Dousson - Thu Jun 16 1994
  *
  * Redistribution and use in source and binary forms, with or without
@@ -53,8 +53,8 @@ void            delete_deps_list            (deps *);
 /* dependancies manager */
 
 void            display_dependencies        (FILE *, int, const char*);
-void            add_dependency              (char *name, size_t namelen, 
-                                             const char*, int);
+void            add_dependency              (char *name, size_t namelen,
+					     const char*, int);
 void            reset_dependencies          (void);
 
 
@@ -79,7 +79,7 @@ const char*     find_file                   (const char*);
 void            add_substitution            (const char*);
 void            substitution_filtering      (char *name, size_t namelen);
 
-int             ignore_filtering            (const char *);         
+int             ignore_filtering            (const char *);
 void            ignore_user_dependency      (const char *);
 void            ignore_system_dependencies  (void);
 void            generate_system_dependencies(void);
@@ -88,7 +88,7 @@ void            generate_system_dependencies(void);
 /* output file */
 
 FILE *          open_output_file            (const char*);
-void            display_target              (FILE*, int, 
+void            display_target              (FILE*, int,
 					     char*, const char*,
 					     const char*, const char*);
 void            close_output_file           (FILE*);
@@ -96,5 +96,3 @@ void            close_output_file           (FILE*);
 void            interrupt_dependancies      (int);
 
 #endif  /* ! MKDEP_H */
-
-
