@@ -32,7 +32,9 @@
 #ifndef MKDEP_H
 #define MKDEP_H
 
-#include <stdio.h>
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
 
 typedef struct deps {
     char           name[1024];
@@ -94,5 +96,13 @@ void            display_target              (FILE*, int,
 void            close_output_file           (FILE*);
 
 void            interrupt_dependancies      (int);
+
+#ifndef HAVE_STRLCAT
+extern size_t strlcat(char *, const char *, size_t);
+#endif
+#ifndef HAVE_STRLCPY
+extern size_t strlcpy(char *, const char *, size_t);
+#endif
+
 
 #endif  /* ! MKDEP_H */
