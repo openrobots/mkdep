@@ -29,9 +29,10 @@
  *
  */
 
-#include "mkdep.h"
-#include <string.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "mkdep.h"
 
 /*
  * Les dependances qu'on a trouve

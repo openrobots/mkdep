@@ -30,10 +30,8 @@
  */
 
 
-#include "mkdep.h"
 #include <stdio.h>
-
-
+#include "mkdep.h"
 
 static const char* helpLines[] = {
 "Usage: mkdep [ -h ] [ -a ] [ -k ] [ -c <compiler> ]",

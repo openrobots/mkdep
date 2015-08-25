@@ -29,10 +29,11 @@
  *
  */
 
-#include "mkdep.h"
 #include <ctype.h>
-#include <string.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "mkdep.h"
 
 static char * preprocessor = NULL;
 
