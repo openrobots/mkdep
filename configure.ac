@@ -17,7 +17,6 @@ dnl
 dnl Get cannonical host
 dnl
 AC_CANONICAL_HOST
-AC_DEFINE_UNQUOTED(OS_TYPE, "$host_os")
 
 AC_SUBST(exeext)
 case ${host_os} in
