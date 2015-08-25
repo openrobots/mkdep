@@ -3,7 +3,8 @@ dnl
 AC_INIT([mkdep],[2.8],[http://softs.laas.fr/openrobots/], mkdep)
 AC_PREREQ(2.59)
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
-AM_MAINTAINER_MODE
+
+AC_CONFIG_HEADER([config.h])
 
 AC_PROG_CC
 AM_PROG_CC_C_O
